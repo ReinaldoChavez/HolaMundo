@@ -1,0 +1,31 @@
+﻿@model List<HolaMundo.Models.Pelicula>
+
+@{
+    ViewBag.Title = "About";
+    string @nombre = "Reinaldo";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Titulo</td>
+            <td>Duracion</td>
+            <td>Pais</td>
+            <td>Lanzamiento</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pelicula in Model)
+        {
+            <tr>
+                <td>@pelicula.Titulo</td>
+                <td>@pelicula.Duracion</td>
+                <td>@pelicula.Pais</td>
+                <td>@pelicula.Publicacion.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    
+    </tbody>
+    </table>
